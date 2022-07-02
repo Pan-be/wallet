@@ -13,6 +13,9 @@ const saveBtn = document.querySelector(".save")
 const cancelBtn = document.querySelector(".cancel")
 const deleteBtn = document.querySelector(".delete")
 
+const lightStyleBtn = document.querySelector(".light")
+const darkStyleBtn = document.querySelector(".dark")
+
 let root = document.documentElement
 let id = 0
 let categoryIcon
@@ -128,12 +131,14 @@ const changeStyleToLight = () => {
 }
 
 const changeStyleToDark = () => {
-	root.style.setProperty("--first-color", "#f9f9f9")
-	root.style.setProperty("--second-color", "#14161f")
-	root.style.setProperty("--border-color", "rgba(0, 0, 0, 0.2)")
+	root.style.setProperty("--first-color", "#14161f")
+	root.style.setProperty("--second-color", "#f9f9f9")
+	root.style.setProperty("--border-color", "rgba(255,255,255,.4)")
 }
 
 addTransactionBtn.addEventListener("click", showPanel)
 saveBtn.addEventListener("click", createNewTransaction)
 cancelBtn.addEventListener("click", closePanel)
 deleteAllBtn.addEventListener("click", deleteAllTransactions)
+lightStyleBtn.addEventListener("click", changeStyleToLight)
+darkStyleBtn.addEventListener("click", changeStyleToDark)
